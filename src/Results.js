@@ -17,6 +17,9 @@ const Results = ({ pets }) => {
           location = {`${pet.city}, ${pet.state}`}
           id = {pet.id}
           />
+          // <Pet
+          // {...pet}
+          // key={pet.id} could do the same job but it is unreadable
           ))
       ) }
     </div>
