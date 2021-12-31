@@ -2,10 +2,12 @@ import { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 
 class Details extends Component {
-  constructor() {
-    super();
-    this.state = { loading: true};
-  }
+  state = { loading: true };
+  // two possible way the one kept work only thanks to preset and babel setup
+  // constructor() {
+  //   super();
+  //   this.state = { loading: true };
+  // }
   async componentDidMount() {
     const res = await fetch(
       //match params permit to get the id of the animal
