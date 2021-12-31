@@ -1,20 +1,28 @@
 import { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class ErrorBoundary extends Component {
-  state = { hasError: false };
-  static getDerivedStateFromError(e) {
+  state = { hasError: false, redirect: false };
+  static getDerivedStateFromError() {
     return { hasError: true}
   }
   componentDidCatch(error, info) {
     // this work with Sentry, Azure Monitor, New Relic, TrackJS
     console.error("ErrorBoundary caught an error", error, info);
   }
-  render() {
+  componentDidUpdate() {
     if (this.state.hasError) {
+      setTimeout(() =>
+        this.setState({ redirect: true }), 5000);
+    }
+  }
+  render() {
+    if (this.state.redirect) {
+      return <Redirect to="/"/>
+    } else if (this.state.hasError) {
       return(
         <h2>
-          this listing has an error. <Link to="/">Click here</Link> to go to the home page.
+          this listing has an error. <Link to="/">Click here</Link> to go to the home page or wait 5 seconds.
         </h2>
       )
     }
