@@ -1,14 +1,18 @@
 import ReactDOM from "react-dom";
 import Details from "./Details"
 import SearchParams from "./SearchParams";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import { StrictMode } from "react";
 
 const App = () => {
   return (
     <div>
-      <h1>Adopt Me!</h1>
       <Router>
+        <header>
+          <Link to="/">
+            <h1>Adopt Me!</h1>
+          </Link>
+        </header>
         <Switch>
           <Route path="/details/:id">
             <Details />
