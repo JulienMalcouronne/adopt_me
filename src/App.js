@@ -18,7 +18,7 @@ const App = () => {
           </header>
           <Switch>
             <Route path="/details/:id">
-              <Details />
+              <Details theme={theme}/>
             </Route>
             <Route path="/">
               <SearchParams />
