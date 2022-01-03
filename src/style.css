@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* header > a {
+  @tailwind extends mb-10;
+} */
 /* * {
   box-sizing: border-box;
   color: #333;

@@ -17,9 +17,10 @@ const App = () => {
       }}
       >
         <Router>
-          <header>
-            <Link to="/">
-              <h1>Adopt Me!</h1>
+          <header
+          className= "w-full mb-10 mp-tx text-center p-7 bg-gradient-to-b from-purple-400 via-pink-500 to-red-500">
+            <Link to="/" className="text-6x1 text-white hover:text-gray-200">
+              Adopt Me!
             </Link>
           </header>
           <Switch>
