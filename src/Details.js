@@ -12,6 +12,7 @@ class Details extends Component {
   //   super();
   //   this.state = { loading: true };
   // }
+  //
   async componentDidMount() {
     const res = await fetch(
       //match params permit to get the id of the animal
